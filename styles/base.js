@@ -2,8 +2,15 @@ export const flex = {
     flex: 1,
 };
 
+export const container = {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+};
+
 export const base = {
-    backgroundColor: '#FFC0CB'
+    backgroundColor: '#fff'
 };
 
 export const baseMargin = {
@@ -14,8 +21,4 @@ export const image = {
     width: 320,
     height: 240,
     marginLeft: 12
-};
-
-export const button = {
-    marginVertical: 20
 };

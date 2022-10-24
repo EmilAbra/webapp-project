@@ -4,10 +4,12 @@ export const input = {
     borderWidth: 1,
     padding: 10,
     borderColor: "#aaa",
-    borderRadius: 3,
+    borderRadius: 25,
     backgroundColor: "#fff",
     marginLeft: 12,
-    marginRight: 12
+    marginRight: 12,
+    elevation: 5,
+    top: 150
 };
 
 export const label = {
@@ -23,3 +25,14 @@ export const label = {
 // const label:after = {
 //     content: ":"
 // };
+export const searchIcon = {
+    padding: 10,
+};
+
+export const searchSection = {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+};
