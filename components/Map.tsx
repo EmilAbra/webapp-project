@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
-import { Text, View, ScrollView } from "react-native";
-import { Base, Typography, Map } from "../styles";
+import { View } from "react-native";
+import { Map } from "../styles";
 
 import MapView from 'react-native-maps';
 import { Marker } from "react-native-maps";
 import * as Location from 'expo-location';
-import getCoordinates from "../models/nominatim";
 
-
-export default function SwedenMap({navigation}) {
-
-    // const [marker, setMarker] = useState<any>(null);
+export default function SwedenMap({}) {
     const [locationMarker, setLocationMarker] = useState<any>(null);
     const [errorMessage, setErrorMessage] = useState('');
     const [position, setPosition] = useState({
@@ -52,7 +48,7 @@ export default function SwedenMap({navigation}) {
     return (
     <View style={Map.container}>
         <MapView
-            style={Map.map}
+            style={Map.mapFullSize}
             region={position}
             showsUserLocation={true}
         >
