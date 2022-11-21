@@ -18,7 +18,7 @@ const auth = {
             email: email,
             password: password,
         };
-        const response = await fetch(`${config.auth_url}login`, {
+        const response = await fetch(`${config.auth_url}/login`, {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -56,8 +56,23 @@ const auth = {
                 'content-type': 'application/json'
             },
         });
+        
+        const result = await response.json();
+        console.log(result);
 
-        return await response.json();
+        if (Object.prototype.hasOwnProperty.call(result, 'errors')) {
+            return {
+                title: result.errors.title,
+                message: result.errors.detail,
+                type: "danger",
+            };
+        }
+
+        return {
+            title: "Registrering",
+            message: result.data.message,
+            type: "success",
+        };
     },
     logout: async function logout() {
         await storage.deleteToken();
