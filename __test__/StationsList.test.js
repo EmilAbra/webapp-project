@@ -72,7 +72,7 @@ test('If no stations has delayes, text "Inga förseningar att visa" should show'
 });
 
 test('If delay exists, a button should show with the station name as title', async () => {
-    const { getByText, debug } = render(<StationsList allStations={stationWithDelay} currentDelays={delayes} />);
+    const { getByText } = render(<StationsList allStations={stationWithDelay} currentDelays={delayes} />);
     const buttonTitle = await getByText('Göteborg C', { exact: false });
 
     expect(buttonTitle).toBeDefined();
