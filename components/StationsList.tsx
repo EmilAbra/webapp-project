@@ -16,8 +16,8 @@ export default function StationsList({ navigation, allStations, currentDelays })
     }
 
     function sortOnStationName(a, b) {
-        const nameA = a.AdvertisedLocationName.toUpperCase(); // ignore upper and lowercase
-        const nameB = b.AdvertisedLocationName.toUpperCase(); // ignore upper and lowercase
+        const nameA = a.AdvertisedLocationName.toUpperCase();
+        const nameB = b.AdvertisedLocationName.toUpperCase();
         if (nameA < nameB) {
             return -1;
         }
@@ -25,7 +25,6 @@ export default function StationsList({ navigation, allStations, currentDelays })
             return 1;
         }
 
-        // names must be equal
         return 0;
     }
 
