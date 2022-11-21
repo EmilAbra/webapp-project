@@ -92,7 +92,7 @@ export default function App() {
                             <Tab.Screen name="Favoriter" options={{ headerShown: false }}>
                                 {() => <FavoritesStack allStations={allStations} setfavoriteStations={setfavoriteStations} favoriteStations={favoriteStations} currentDelays={currentDelays} />}
                             </Tab.Screen>
-                            <Tab.Screen name="Logga ut" options={{ headerShown: false }}>
+                            <Tab.Screen name="Logga ut">
                             {() => <SignOut setIsLoggedIn={setIsLoggedIn} />}
                             </Tab.Screen>
                         </>    

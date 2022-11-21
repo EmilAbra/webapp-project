@@ -1,26 +1,20 @@
-import Auth from '../../interfaces/auth';
-import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { showMessage } from "react-native-flash-message";
 import AuthModel from '../../models/auth.ts';
-import AuthFields from './AuthFields';
-import { Base, Typography, Forms, Images } from '../../styles';
 import AuthButton from './AuthButton';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import PasswordInputText from 'react-native-hide-show-password-input';
 
-export default function SignOut({navigation, setIsLoggedIn}) {
+export default function SignOut({setIsLoggedIn}) {
 
     async function doSignOut() {
         setIsLoggedIn(false);
-        const result = await AuthModel.logout();
+        await AuthModel.logout();
+        
         showMessage({
-            message: result.title,
-            description: result.message,
-            type: result.type,
+            message: "Log out",
+            description: "User logged out",
+            type: 'success',
         });
-        navigation.navigate("Home");
     }
 
     return (
@@ -30,9 +24,7 @@ export default function SignOut({navigation, setIsLoggedIn}) {
                     title={"Logga ut"}
                     titleStyle={styles.loginButtonTitle}
                     style={styles.loginButton}
-                    onPress={
-                    ()=>{doSignOut}
-                    }
+                    onPress={doSignOut}
                 />
             </View>
         </SafeAreaView>
@@ -44,25 +36,9 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#fff',
     },
-    inputContainer: {
-      flex: 2,
-      justifyContent: 'flex-end',
-    },
     buttonContainer: {
         flex: 1,
-        justifyContent: 'flex-end',
-    },
-    sectionStyle: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: '#fff',
-        borderWidth: 1,
-        borderColor: '#aaa',
-        height: 50,
-        borderRadius: 5,
-        margin: 10,
-        elevation: 5,
+        justifyContent: 'center',
     },
     loginButton: {
         backgroundColor: '#4CAF50',
