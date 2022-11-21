@@ -18,6 +18,8 @@ const storage = {
     readToken: async function readToken(): Promise<any> {
         try {
             const jsonValue = await AsyncStorage.getItem('@token');
+            // console.log(jsonValue);
+            
             return jsonValue != null ? JSON.parse(jsonValue) : null;
         } catch (e) {
             console.log(e);
