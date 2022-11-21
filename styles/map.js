@@ -7,7 +7,12 @@ export const container = {
     justifyContent: 'center',
 };
 
-export const map = {
+export const mapHalfHeight = {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height / 2,
+};
+
+export const mapFullSize = {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
 };

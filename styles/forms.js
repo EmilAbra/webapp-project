@@ -9,7 +9,21 @@ export const input = {
     marginLeft: 12,
     marginRight: 12,
     elevation: 5,
-    top: 150
+    top: 150,
+    textAlign: 'center'
+};
+
+export const loginInput = {
+    fontSize: 20,
+    marginBottom: 28,
+    borderWidth: 1,
+    padding: 10,
+    borderColor: "#aaa",
+    borderRadius: 5,
+    backgroundColor: "#fff",
+    marginLeft: 12,
+    marginRight: 12,
+    elevation: 5,
 };
 
 export const label = {

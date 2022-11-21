@@ -1,5 +1,7 @@
 export const screenContainer = {
-    marginVertical: 20
+    flex: 1,
+    flexDirection: "row",
+    marginVertical: 20,
 };
 
 export const appButtonContainer = {
@@ -8,6 +10,7 @@ export const appButtonContainer = {
 };
 
 export const appButtonText = {
+    padding: 10,
     fontSize: 17,
     color: "#000",
 };
