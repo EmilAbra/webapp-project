@@ -16,8 +16,8 @@ export default function Register({navigation, setIsLoggedIn}) {
 
     async function doRegister() {            
         if (auth.email && auth.password) {
-            
             const result = await AuthModel.register(auth.email, auth.password);
+            
             if (result.type === "success") {
                 showMessage({
                     message: result.title,
@@ -49,7 +49,7 @@ export default function Register({navigation, setIsLoggedIn}) {
                             setAuth({ ...auth, email: content })
                         }}
                     />
-                <View/>
+                </View>
                 <View style={ styles.sectionStyle }>
                     <TextInput
                         style={{flex: 6, fontSize: 20, paddingLeft: 10}}
@@ -81,7 +81,8 @@ export default function Register({navigation, setIsLoggedIn}) {
             </View>
         </SafeAreaView>
     );
-};
+}
+
 
 const styles = StyleSheet.create({
     container: {
