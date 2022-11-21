@@ -1,17 +1,14 @@
-import { useState, useEffect } from 'react';
 import { View, Text, ScrollView } from "react-native";
 import { Base, Typography, Button } from '../styles';
 import AppButton from './AppButton';
-import orderModel from "../models/orders.ts";
 
-
-export default function OrderList({ route, navigation, allStations, currentDelays, messages, reasonCodes}) {    
+export default function StationsList({ navigation, allStations, currentDelays }) {    
 
     function filterOnDelayed(item) {
         for (const object in currentDelays) {
-            let fromLocation = currentDelays[object].FromLocation
+            let fromLocation = currentDelays[object].FromLocation;
             for (const location in fromLocation) {
-                if (fromLocation[location].LocationName.includes(item.LocationSignature)) {
+                if (fromLocation[location].LocationName === item.LocationSignature) {
                     return true;
                 }
             }
@@ -32,7 +29,7 @@ export default function OrderList({ route, navigation, allStations, currentDelay
         return 0;
     }
 
-    const listOfOrders = allStations
+    const listOfDelayedStations = allStations
         .filter(filterOnDelayed)
         .sort(sortOnStationName)
         .map((station, index) => {
@@ -45,18 +42,25 @@ export default function OrderList({ route, navigation, allStations, currentDelay
                         station: station,
                         currentDelays: currentDelays,
                         allStations: allStations,
-                        messages: messages,
-                        reasonCodes: reasonCodes
                     });
                 }}
                 />
                 </View>
         });
+    
+    let delayes = true;
+    if (listOfDelayedStations.length === 0) {
+        delayes = false;
+    }
 
     return (
         <ScrollView  style={Base.base}>
-            <Text style={Typography.normal}>Tågstationer med förseningar</Text>
-            {listOfOrders}
+            <Text style={Typography.header4}>Tågstationer med förseningar</Text>
+            {delayes
+                ? listOfDelayedStations
+                : <Text style={Typography.header4}>Inga förseningar att visa</Text>
+            }
+            
         </ScrollView>
     );
 }

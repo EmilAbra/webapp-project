@@ -1,14 +1,10 @@
 import { View, Text, ScrollView } from "react-native";
-import { useState, useEffect } from 'react';
-
-import orderModel from "../models/orders";
-import productsModel from "../models/products";
 import { Base, Typography, Button } from '../styles';
 import DetailsButton from './DetailsButton';
 
 
 export default function StationDetails({ route, navigation }) {
-    const { allStations, station, currentDelays, reasonCodes, messages } = route.params;
+    const { allStations, station, currentDelays } = route.params;
 
     function filterOnStationName(item) {
         for (const object in item.FromLocation) {
@@ -51,28 +47,7 @@ export default function StationDetails({ route, navigation }) {
         return dateStr + " " + timeStr.slice(0, 8);
     }
 
-    // function getReasonForDelay(acronym) {
-
-    //     for (const object in messages) {
-    //         const header = messages[object].Header;
-    //         const description = messages[object].ExternalDescription;
-    //         const trafficImpact = messages[object].TrafficImpact;
-
-    //         for (const item in trafficImpact) {
-    //             const affectedStations = trafficImpact[item].AffectedLocation;
-
-    //             if (affectedStations && affectedStations.includes(station.LocationSignature)) {
-                    
-    //             }
-                
-                
-    //         }
-
-    //     }
-        
-    // }
-
-    const ListOfDelaydTrains = currentDelays
+    const ListOfDelayedTrains = currentDelays
         .filter(filterOnStationName)
         .map((train, index) => {
             const beforeArrival = convertIsoDateString(train.AdvertisedTimeAtLocation);
@@ -103,8 +78,8 @@ export default function StationDetails({ route, navigation }) {
 
     return (
         <ScrollView  style={Base.base}>
-            <Text style={Typography.normal}>Förseningar för {station.AdvertisedLocationName} station</Text>
-            {ListOfDelaydTrains}
+            <Text style={Typography.header4}>Förseningar för {station.AdvertisedLocationName} station</Text>
+            {ListOfDelayedTrains}
         </ScrollView>
     )
 };
