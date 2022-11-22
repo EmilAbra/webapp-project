@@ -1,5 +1,5 @@
 import { StyleSheet, Text, ImageBackground, TextInput, View } from 'react-native';
-import { Images } from '../styles';
+import { Images, Typography, Forms, Base } from '../styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -7,16 +7,16 @@ import trainTracks from '../assets/train_home.jpg';
 
 export default function Home({navigation}) {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={Base.flex}>
       <ImageBackground source={trainTracks} style={Images.homeBackground}>
       <View style={{top: 150}}>
         <View>
-          <Text style={{fontSize: 42, textAlign: 'center'}}>Tåg-kollen</Text>
+          <Text style={Typography.header1}>Tåg-kollen</Text>
         </View>
-        <View style={styles.sectionStyle}>
-          <Icon name="search" size={20} style={styles.searchIcon}/>
+        <View style={Base.homeSection}>
+          <Icon name="search" size={20} style={Forms.homeSearchIcon}/>
           <TextInput
-            style={{flex: 1, fontSize: 20, textAlign: 'center', paddingRight: 30}}
+            style={Forms.homeInput}
             placeholder="Sök tågstation"
             onPressIn={
             ()=>{navigation.navigate("List")}
@@ -28,34 +28,3 @@ export default function Home({navigation}) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 10,
-  },
-  sectionStyle: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#aaa',
-    height: 50,
-    borderRadius: 25,
-    margin: 10,
-    elevation: 5,
-  },
-  search: {
-    flex: 1,
-    textAlign: 'center',
-    borderRadius: 25,
-    fontSize: 20,
-    padding: 10,
-  },
-  searchIcon: {
-    paddingLeft: 20
-  },
-});

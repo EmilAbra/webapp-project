@@ -1,19 +1,13 @@
 import React from "react";
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity, Text } from "react-native";
+import { Button } from '../styles';
 
 export default function DetailsButton({ onPress, title, arrival, expectedArrival, delayedInMin}) {
 
     return (
-        <View style={styles.container}>
+        <View style={Button.detailsButtonContainer}>
           <TouchableOpacity
-            style={{
-              backgroundColor: '#FFF',
-              height: 'auto',
-              maxWidth: '100%',
-              position: 'relative',
-              elevation: 5,
-              padding: 5
-            }}
+            style={Button.detailsButton}
             onPress={onPress}
             >
             <View>
@@ -27,12 +21,4 @@ export default function DetailsButton({ onPress, title, arrival, expectedArrival
       );
  
 };
-
-const styles = StyleSheet.create({
-    container: {
-    flex: 1,
-    marginLeft: 12,
-    marginRight: 12,
-  },
-});
 

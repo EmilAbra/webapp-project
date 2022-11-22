@@ -74,7 +74,7 @@ export default function StationDetails({ route, navigation }) {
     }
 
     return (
-        <ScrollView  style={Base.base}>
+        <ScrollView  style={Base.baseBgColor}>
             <Text style={Typography.header4}>Förseningar för {stationName} station</Text>
             {delayedTrains 
                 ? ListOfDelayedTrains

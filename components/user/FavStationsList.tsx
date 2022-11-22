@@ -72,7 +72,7 @@ export default function FavStationsList({ allStations, favoriteStations, navigat
     }
 
     return (
-        <ScrollView  style={Base.base}>
+        <ScrollView  style={Base.baseBgColor}>
             <Text style={Typography.header4}>Mina stationer med förseningar</Text>
             {myStations 
                 ? listOfMyStations

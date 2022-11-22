@@ -53,7 +53,7 @@ export default function StationsList({ navigation, allStations, currentDelays })
     }
 
     return (
-        <ScrollView  style={Base.base}>
+        <ScrollView  style={Base.baseBgColor}>
             <Text style={Typography.header4}>Tågstationer med förseningar</Text>
             {delayes
                 ? listOfDelayedStations

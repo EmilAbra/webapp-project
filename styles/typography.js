@@ -1,6 +1,7 @@
 export const header1 = {
     fontSize: 42,
-    textAlign: 'center'
+    textAlign: 'center',
+    marginBottom: 15
 };
 
 export const header2 = {
@@ -31,15 +32,10 @@ export const normal = {
 };
 
 export const normalCentre = {
-    fontSize: 20,
+    fontSize: 18,
     marginBottom: 28,
     color: '#444',
+    paddingLeft: 15,
+    paddingRight: 15,
     textAlign: 'center'
-};
-
-export const notInStock = {
-    fontSize: 20,
-    marginBottom: 28,
-    color: '#444',
-    textAlign: 'center',
 };

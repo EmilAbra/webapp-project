@@ -1,24 +1,17 @@
 import React from "react";
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity, Text } from "react-native";
+import { Button } from '../../styles';
 
 export default function RemoveFavButton({ onPress }) {
 
     return (
-        <View>
+        <View style={Button.removeFavContainer}>
           <TouchableOpacity
-            style={{
-              backgroundColor: '#FFF',
-              height: 'auto',
-              maxWidth: '100%',
-              position: 'relative',
-              elevation: 5,
-              padding: 10,
-              borderRadius: 5,
-            }}
+            style={Button.removeFavButton}
             onPress={onPress}
             >
-            <View style={{borderRadius: 10}}>
-              <Text style={{textAlign: 'center'}}>Ta bort</Text>
+            <View>
+              <Text style={Button.removeFavButtonText}>Ta bort</Text>
             </View>
           </TouchableOpacity>
         </View>

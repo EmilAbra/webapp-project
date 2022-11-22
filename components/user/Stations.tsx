@@ -69,7 +69,7 @@ export default function StationsList({ allStations, favoriteStations, setfavorit
         });
 
     return (
-        <ScrollView  style={Base.base}>
+        <ScrollView  style={Base.baseBgColor}>
             <Text style={Typography.normal}>Alla tågstationer</Text>
             <Text style={Typography.normal}>Tryck på namnet för att lägga till favoriter</Text>
             {listOfStations}

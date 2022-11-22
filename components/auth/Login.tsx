@@ -1,12 +1,13 @@
 import Auth from '../../interfaces/auth';
-import { useState } from 'react';
-import { StyleSheet, View, TextInput } from 'react-native';
-import { showMessage } from "react-native-flash-message";
-import AuthModel from '../../models/auth.ts';
-import { Forms } from '../../styles';
-import AuthButton from './AuthButton';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useState } from 'react';
+import { View, TextInput } from 'react-native';
+import { showMessage } from "react-native-flash-message";
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import { Forms, Base, Button } from '../../styles';
+import AuthButton from './AuthButton';
+import AuthModel from '../../models/auth.ts';
 
 export default function Login({navigation, setIsLoggedIn}) {
     const [auth, setAuth] = useState<Partial<Auth>>({});
@@ -34,11 +35,11 @@ export default function Login({navigation, setIsLoggedIn}) {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.inputContainer}>
+        <SafeAreaView style={Base.baseContainer}>
+            <View style={Forms.inputContainerLogin}>
                 <View>
                     <TextInput
-                        style={ Forms.loginInput }
+                        style={Forms.emailInput}
                         keyboardType="email-address"
                         autoCapitalize="none"
                         autoCorrect={false}
@@ -48,9 +49,9 @@ export default function Login({navigation, setIsLoggedIn}) {
                         }}
                         />
                 </View>
-                <View  style={ styles.sectionStyle }>
+                <View  style={Forms.passwordSection}>
                     <TextInput
-                        style={{flex: 6, fontSize: 20, paddingLeft: 10}}
+                        style={Forms.passwordInput}
                         placeholder="Lösenord"
                         autoCapitalize="none"
                         autoCorrect={false}
@@ -61,63 +62,20 @@ export default function Login({navigation, setIsLoggedIn}) {
                     </TextInput>
                     <Icon
                         size={30}
-                        style={{flex: 1, paddingRight: 10}}
+                        style={Forms.passwordIcon}
                         name={hidePass ? 'eye-slash' : 'eye'}
                         onPress={() => setHidePass(!hidePass)} 
                     />
                 </View>
             </View>
-            <View style={styles.buttonContainer}>
+            <View style={Button.logInButtonContainer}>
                 <AuthButton
                     title={"Logga in"}
-                    titleStyle={styles.loginButtonTitle}
-                    style={styles.loginButton}
+                    titleStyle={Button.loginButtonTitle}
+                    style={Button.loginButton}
                     onPress={doLogin}
                 />
             </View>
         </SafeAreaView>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-    },
-    inputContainer: {
-      flex: 2,
-      justifyContent: 'flex-end',
-    },
-    buttonContainer: {
-        flex: 1,
-        justifyContent: 'flex-end',
-    },
-    sectionStyle: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: '#fff',
-        borderWidth: 1,
-        borderColor: '#aaa',
-        height: 50,
-        borderRadius: 5,
-        margin: 10,
-        elevation: 5,
-    },
-    loginButton: {
-        backgroundColor: '#4CAF50',
-        height: 'auto',
-        maxWidth: '100%',
-        marginLeft: 15,
-        marginRight: 15,
-        marginBottom: 20, 
-        padding: 7,
-        borderRadius: 5,
-    },
-    loginButtonTitle: {
-        fontSize: 25, 
-        color: '#FFF', 
-        textAlign: 'center',
-    },
-});
-  
