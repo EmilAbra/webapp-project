@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { View, Text, ScrollView } from "react-native";
 
 import { Base, Typography, Button } from '../../styles';
@@ -6,7 +6,7 @@ import AppButton from '../AppButton';
 import RemoveFavButton from './RemoveFavButton';
 import userModel from '../../models/user.ts';
 
-export default function FavStationsList({ route, allStations, favoriteStations, navigation, currentDelays, setfavoriteStations}) {   
+export default function FavStationsList({ allStations, favoriteStations, navigation, currentDelays, setfavoriteStations}) {   
 
     async function reloadFavs() {
         setfavoriteStations(await userModel.getUserData());
@@ -19,8 +19,8 @@ export default function FavStationsList({ route, allStations, favoriteStations, 
     function sortOnStationName(a, b) {
         const artefactA = JSON.parse(a.artefact);
         const artefactB = JSON.parse(b.artefact);
-        const nameA = artefactA.place.toUpperCase(); // ignore upper and lowercase
-        const nameB = artefactB.place.toUpperCase(); // ignore upper and lowercase
+        const nameA = artefactA.place.toUpperCase();
+        const nameB = artefactB.place.toUpperCase();
 
         if (nameA < nameB) {
             return -1;
@@ -29,7 +29,6 @@ export default function FavStationsList({ route, allStations, favoriteStations, 
             return 1;
         }
 
-        // names must be equal
         return 0;
     }
 
