@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
-import FlashMessage from "react-native-flash-message";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Base } from './styles';
+import FlashMessage from "react-native-flash-message";
+
 import HomeStack from "./components/HomeStack.tsx";
 import AuthStack from "./components/auth/AuthStack.tsx";
 import Map from "./components/Map.tsx";
@@ -10,9 +14,7 @@ import Help from "./components/Help.tsx";
 import FavoritesStack from "./components/user/FavoritesStack.tsx";
 import Stations from "./components/user/Stations.tsx";
 import SignOut from "./components/auth/SignOut.tsx";
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Base } from './styles';
+
 import authModel from './models/auth.ts';
 import userModel from './models/user.ts';
 import stationsModel from './models/stationsModel';

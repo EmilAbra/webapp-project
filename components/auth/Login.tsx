@@ -1,14 +1,12 @@
 import Auth from '../../interfaces/auth';
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, View, TextInput } from 'react-native';
 import { showMessage } from "react-native-flash-message";
 import AuthModel from '../../models/auth.ts';
-import AuthFields from './AuthFields';
-import { Base, Typography, Forms, Images } from '../../styles';
+import { Forms } from '../../styles';
 import AuthButton from './AuthButton';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import PasswordInputText from 'react-native-hide-show-password-input';
 
 export default function Login({navigation, setIsLoggedIn}) {
     const [auth, setAuth] = useState<Partial<Auth>>({});

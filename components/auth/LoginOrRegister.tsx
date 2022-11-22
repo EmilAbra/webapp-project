@@ -1,13 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
-import { Base, Typography, Forms, Images } from '../../styles';
+import { StyleSheet, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AuthButton from './AuthButton';
-import RegisterButton from './RegisterButton';
-
-
 
 export default function LoginOrRegister({navigation}) {
     return (

@@ -1,8 +1,6 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
 
-// TouchableOpacity.defaultProps = { activeOpacity: 0.2 };
-
 export default function DetailsButton({ onPress, title, arrival, expectedArrival, delayedInMin}) {
 
     return (

@@ -1,7 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from "./Home.tsx";
-// import Stations from "./Stations.tsx";
 
+import Home from "./Home.tsx";
 import StationsList from './StationsList';
 import StationDetails from './StationDetails';
 import StationMap from './StationMap';

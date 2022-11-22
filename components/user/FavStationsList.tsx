@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { View, Text, ScrollView } from "react-native";
-
 import { Base, Typography, Button } from '../../styles';
+
 import AppButton from '../AppButton';
 import RemoveFavButton from './RemoveFavButton';
 import userModel from '../../models/user.ts';

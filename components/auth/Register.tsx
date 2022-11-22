@@ -1,16 +1,14 @@
-import Auth from '../../interfaces/auth';
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, View, TextInput } from 'react-native';
 import { showMessage } from "react-native-flash-message";
-import AuthModel from '../../models/auth.ts';
-import AuthFields from './AuthFields';
-import { Base, Typography, Forms, Images } from '../../styles';
-import AuthButton from './AuthButton';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Forms } from '../../styles';
+import Auth from '../../interfaces/auth';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import PasswordInputText from 'react-native-hide-show-password-input';
+import AuthButton from './AuthButton';
+import AuthModel from '../../models/auth.ts';
 
-export default function Register({navigation, setIsLoggedIn}) {
+export default function Register({navigation}) {
     const [auth, setAuth] = useState<Partial<Auth>>({});
     const [hidePass, setHidePass] = useState(true);
 

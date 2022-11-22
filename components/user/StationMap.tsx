@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { Map, Typography } from "../../styles";
-
-import MapView from 'react-native-maps';
 import { Marker, Circle } from "react-native-maps";
+import MapView from 'react-native-maps';
 import * as Location from 'expo-location';
-
 
 export default function StationMap({ route }) {
     const { delayedInMin, stationName, longitude, latitude } = route.params;    

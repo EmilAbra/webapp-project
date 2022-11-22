@@ -1,12 +1,11 @@
-import { View, Text, ScrollView, TextInput } from "react-native";
-import { useState, useEffect } from 'react';
+import { View, Text, ScrollView } from "react-native";
+import { useEffect } from 'react';
 import { Base, Typography, Button } from '../../styles';
 import AppButton from '../AppButton';
 import { showMessage } from "react-native-flash-message";
 import userModel from "../../models/user"
-import { Forms, Images } from '../../styles';
 
-export default function StationsList({ navigation, allStations, favoriteStations, setfavoriteStations }) {    
+export default function StationsList({ allStations, favoriteStations, setfavoriteStations }) {    
 
     async function reloadFavs() {
         setfavoriteStations(await userModel.getUserData());

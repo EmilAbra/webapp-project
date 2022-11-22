@@ -59,7 +59,6 @@ export default function StationsList({ navigation, allStations, currentDelays })
                 ? listOfDelayedStations
                 : <Text style={Typography.header4}>Inga förseningar att visa</Text>
             }
-            
         </ScrollView>
     );
 }

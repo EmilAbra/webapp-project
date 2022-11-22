@@ -1,10 +1,7 @@
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { Text, View, ImageBackground } from 'react-native';
 import { Images, Typography } from '../styles';
 import { Help } from '../styles';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import trainTracks from '../assets/train_help.jpg';
-
-
 
 export default function appHelp() {
     return (

@@ -56,23 +56,20 @@ export default function StationDetails({ route, navigation }) {
             const stationCoords = getStationCoords(station.Geometry.WGS84)
             
             return <View style={Button.screenContainer} key={index}>
-                <DetailsButton
-                    title={station.AdvertisedLocationName + " - " + getStationName(train.ToLocation[0].LocationName)}
-                    key={index}
-                    arrival={beforeArrival}
-                    expectedArrival={newArrival}
-                    delayedInMin={delayedInMin}
-                    // description={getReasonForDelay(train.AdvertisedTimeAtLocation)}
-                    onPress={() => {
-                        navigation.navigate('MapOfDelay', {
-                            delayedInMin: delayedInMin,
-                            stationCoords: stationCoords,
-                            stationName: station.AdvertisedLocationName
-                        });
-                    }}
-        
-                
-                />
+                    <DetailsButton
+                        title={station.AdvertisedLocationName + " - " + getStationName(train.ToLocation[0].LocationName)}
+                        key={index}
+                        arrival={beforeArrival}
+                        expectedArrival={newArrival}
+                        delayedInMin={delayedInMin}
+                        onPress={() => {
+                            navigation.navigate('MapOfDelay', {
+                                delayedInMin: delayedInMin,
+                                stationCoords: stationCoords,
+                                stationName: station.AdvertisedLocationName
+                            });
+                        }}
+                    />
                 </View>
         });
 

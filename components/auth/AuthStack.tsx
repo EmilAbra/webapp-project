@@ -10,7 +10,7 @@ export default function AuthStack(props) {
     return (
         <Stack.Navigator initialRouteName="LoginOrReg" >
             <Stack.Screen name="LoginOrReg" options={{ headerShown: false }}>
-                {(screenProps) => <LoginOrRegister {...screenProps} setIsLoggedIn={props.setIsLoggedIn} />}
+                {(screenProps) => <LoginOrRegister {...screenProps} />}
             </Stack.Screen>
             <Stack.Screen name="Logga in">
                 {(screenProps) => <Login {...screenProps} setIsLoggedIn={props.setIsLoggedIn} />}

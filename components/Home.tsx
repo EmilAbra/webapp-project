@@ -1,11 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, ImageBackground, TextInput, View, Image } from 'react-native';
-import { Forms, Images } from '../styles';
+import { StyleSheet, Text, ImageBackground, TextInput, View } from 'react-native';
+import { Images } from '../styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import trainTracks from '../assets/train_home.jpg';
-import { Dimensions } from "react-native";
-// import { Icon } from 'react-native-vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import trainTracks from '../assets/train_home.jpg';
 
 export default function Home({navigation}) {
   return (

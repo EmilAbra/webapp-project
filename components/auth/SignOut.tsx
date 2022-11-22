@@ -1,8 +1,9 @@
 import { StyleSheet, View } from 'react-native';
 import { showMessage } from "react-native-flash-message";
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 import AuthModel from '../../models/auth.ts';
 import AuthButton from './AuthButton';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function SignOut({setIsLoggedIn}) {
 
@@ -33,8 +34,8 @@ export default function SignOut({setIsLoggedIn}) {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#fff',
+        flex: 1,
+        backgroundColor: '#fff',
     },
     buttonContainer: {
         flex: 1,
