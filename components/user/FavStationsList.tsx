@@ -73,7 +73,7 @@ export default function FavStationsList({ allStations, favoriteStations, navigat
 
     return (
         <ScrollView  style={Base.baseBgColor}>
-            <Text style={Typography.header4}>Mina stationer med förseningar</Text>
+            <Text style={Typography.header4}>Mina Tågstationer </Text>
             {myStations 
                 ? listOfMyStations
                 : <Text style={Typography.normal}>Lägg till favorit-stationer för att se om de har förseningar</Text>

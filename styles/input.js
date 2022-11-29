@@ -5,10 +5,6 @@ export const homeInput = {
     paddingRight: 30
 };
 
-export const homeSearchIcon = {
-    paddingLeft: 20
-};
-
 export const inputContainerLogin = {
     flex: 2,
     justifyContent: 'flex-end',
@@ -48,27 +44,10 @@ export const passwordInput = {
     paddingLeft: 10
 };
 
-export const passwordIcon = {
-    flex: 1,
-    paddingRight: 10
-};
-
 export const label = {
     fontWeight: "bold",
     marginTop: 10,
     marginLeft: 12
-};
-
-export const searchIcon = {
-    padding: 10,
-};
-
-export const searchSection = {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
 };
 
 export const passwordSection = {

@@ -5,7 +5,7 @@ import { View, TextInput } from 'react-native';
 import { showMessage } from "react-native-flash-message";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { Input, Base, Button } from '../../styles';
+import { Input, Base, Button, Icons } from '../../styles';
 import AuthButton from './AuthButton';
 import AuthModel from '../../models/auth.ts';
 
@@ -62,7 +62,7 @@ export default function Login({navigation, setIsLoggedIn}) {
                     </TextInput>
                     <Icon
                         size={30}
-                        style={Input.passwordIcon}
+                        style={Icons.passwordIcon}
                         name={hidePass ? 'eye-slash' : 'eye'}
                         onPress={() => setHidePass(!hidePass)} 
                     />

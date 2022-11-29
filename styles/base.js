@@ -34,22 +34,3 @@ export const baseBgColor = {
 export const baseMargin = {
     marginBottom: 28
 };
-
-export const loginIconContainer = {
-    height: 120,
-    width: 120,
-    backgroundColor: '#dfdfdf',
-    borderRadius: 75,
-    marginTop: 115,
-    marginBottom: 25,
-    alignSelf: 'center'
-};
-
-export const loginIcon = {
-    fontSize: 60,
-    textAlign: 'center',
-    flex: 1,
-    alignSelf: 'center',
-    paddingTop: 30,
-    color: '#ffffff'
-};

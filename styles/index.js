@@ -5,5 +5,6 @@ import * as Map from './map';
 import * as Images from './images';
 import * as Button from './button';
 import * as Help from './help';
+import * as Icons from './icon';
 
-export { Base, Typography, Input, Map, Images, Button, Help };
+export { Base, Typography, Input, Map, Images, Button, Help, Icons };

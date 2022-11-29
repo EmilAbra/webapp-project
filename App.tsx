@@ -6,6 +6,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Base } from './styles';
 import FlashMessage from "react-native-flash-message";
+import { StyleSheet, Text, ImageBackground, TextInput, View } from 'react-native';
+
 
 import HomeStack from "./components/HomeStack.tsx";
 import AuthStack from "./components/auth/AuthStack.tsx";
@@ -63,7 +65,7 @@ export default function App() {
     }, []);
 
     return (
-        <SafeAreaView style={Base.flex}>
+        <View style={Base.flex}>
             <NavigationContainer>
                 <Tab.Navigator screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused, color, size }) => {
@@ -88,7 +90,7 @@ export default function App() {
                     </Tab.Screen>
                     {isLoggedIn ?
                         <>  
-                            <Tab.Screen name="Stationer" options={{ headerShown: false }}>
+                            <Tab.Screen name="Stationer">
                                 {() => <Stations allStations={allStations} favoriteStations={favoriteStations} setfavoriteStations={setfavoriteStations} />}
                             </Tab.Screen>
                             <Tab.Screen name="Favoriter" options={{ headerShown: false }}>
@@ -105,8 +107,8 @@ export default function App() {
                     }
                 </Tab.Navigator>
             </NavigationContainer>
-            <StatusBar style="auto" />
+            <StatusBar style="auto" translucent={true} backgroundColor='transparent'/>
             <FlashMessage position="top" />
-        </SafeAreaView>
+        </View>
     );
 }

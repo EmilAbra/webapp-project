@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import { showMessage } from "react-native-flash-message";
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Input, Base, Button, Typography } from '../../styles';
+import { Input, Base, Button, Icons } from '../../styles';
 
 import Auth from '../../interfaces/auth';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -62,7 +62,7 @@ export default function Register({navigation}) {
                     </TextInput>
                     <Icon
                         size={30}
-                        style={Input.passwordIcon}
+                        style={Icons.passwordIcon}
                         name={hidePass ? 'eye-slash' : 'eye'}
                         onPress={() => setHidePass(!hidePass)} 
                     />
