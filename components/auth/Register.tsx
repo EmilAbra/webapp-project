@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import { showMessage } from "react-native-flash-message";
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Forms, Base, Button, Typography } from '../../styles';
+import { Input, Base, Button, Typography } from '../../styles';
 
 import Auth from '../../interfaces/auth';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -36,10 +36,10 @@ export default function Register({navigation}) {
 
     return (
         <SafeAreaView style={Base.baseContainer}>
-            <View style={Forms.inputContainerLogin}>
+            <View style={Input.inputContainerLogin}>
                 <View>
                     <TextInput
-                        style={Forms.emailInput}
+                        style={Input.emailInput}
                         keyboardType="email-address"
                         autoCapitalize="none"
                         autoCorrect={false}
@@ -49,9 +49,9 @@ export default function Register({navigation}) {
                         }}
                     />
                 </View>
-                <View style={Forms.passwordSection}>
+                <View style={Input.passwordSection}>
                     <TextInput
-                        style={Forms.passwordInput}
+                        style={Input.passwordInput}
                         placeholder="Lösenord"
                         autoCapitalize="none"
                         autoCorrect={false}
@@ -62,7 +62,7 @@ export default function Register({navigation}) {
                     </TextInput>
                     <Icon
                         size={30}
-                        style={Forms.passwordIcon}
+                        style={Input.passwordIcon}
                         name={hidePass ? 'eye-slash' : 'eye'}
                         onPress={() => setHidePass(!hidePass)} 
                     />
