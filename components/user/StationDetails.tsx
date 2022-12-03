@@ -1,6 +1,6 @@
 import { View, Text, ScrollView } from "react-native";
 import { Base, Typography, Button } from '../../styles';
-import DetailsButton from '../DetailsButton';
+import StationDetailsButton from '../StationDetailsButton';
 
 
 export default function StationDetails({ route, navigation }) {
@@ -47,8 +47,8 @@ export default function StationDetails({ route, navigation }) {
             const newArrival = convertIsoDateString(train.EstimatedTimeAtLocation);
             const delayedInMin = calculateTimeDifference(train.AdvertisedTimeAtLocation, train.EstimatedTimeAtLocation);
             
-            return <View style={Button.screenContainer} key={index}>
-                <DetailsButton
+            return <View style={Button.detailsButtonContainer} key={index}>
+                <StationDetailsButton
                     title={stationName + " - " + getStationName(train.ToLocation[0].LocationName)}
                     key={index}
                     arrival={beforeArrival}

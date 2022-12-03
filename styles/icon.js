@@ -8,7 +8,7 @@ export const loginIconContainer = {
     backgroundColor: '#dfdfdf',
     borderRadius: 75,
     marginTop: 115,
-    marginBottom: 25,
+    marginBottom: 35,
     alignSelf: 'center'
 };
 

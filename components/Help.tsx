@@ -10,7 +10,7 @@ export default function appHelp() {
                 <View style={Help.textContainer}>
                     <Text style={Typography.normal}>På startsidan kan du söka upp de stationer som nuvarande har förseningar.</Text>
                     <Text style={Typography.normal}>Genom att trycka på stationen har du möjligheten att se den på en karta och hur mycket tid du har på dig tills tåget kommer.</Text>
-                    <Text style={Typography.normal}>Om du blir medlem kan du spara dina egna favorit-stationer och se om det finns förseningar.</Text>
+                    <Text style={Typography.normal}>Om du blir medlem kan du spara dina egna favoritstationer och se om det finns förseningar.</Text>
                 </View>
             </ImageBackground>
         </View>

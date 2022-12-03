@@ -1,7 +1,7 @@
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { showMessage } from "react-native-flash-message";
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button, Base } from '../../styles';
+import { Button, Base, Typography } from '../../styles';
 
 import AuthModel from '../../models/auth.ts';
 import AuthButton from './AuthButton';
@@ -24,7 +24,7 @@ export default function SignOut({setIsLoggedIn}) {
             <View style={Button.signOutButtonContainer}>
                 <AuthButton
                     title={"Logga ut"}
-                    titleStyle={Button.loginButtonTitle}
+                    titleStyle={Typography.loginButtonTitle}
                     style={Button.loginButton}
                     onPress={doSignOut}
                 />

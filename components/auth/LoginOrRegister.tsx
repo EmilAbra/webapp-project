@@ -12,14 +12,14 @@ export default function LoginOrRegister({navigation}) {
                 <Icon  style={Icons.loginIcon} name={'user-o'} />
             </View>
             <View>
-                <Text style={Typography.header1}>Min sida</Text>
+                <Text style={Typography.header2}>Min sida</Text>
                 <Text style={Typography.normalCentre}>Logga in för att lägga till tågstationer till favoriter.</Text>
             </View>
             <View style={Button.logInButtonContainer}>
                 <AuthButton
                     title={"Logga in"}
                     style={Button.loginButton}
-                    titleStyle={Button.loginButtonTitle}
+                    titleStyle={Typography.loginButtonTitle}
                     onPress={
                     ()=>{navigation.navigate("Logga in")}
                     }
@@ -27,7 +27,7 @@ export default function LoginOrRegister({navigation}) {
                 <AuthButton
                     title={"Bli medlem"}
                     style={Button.registerButton}
-                    titleStyle={Button.registerButtonTitle}
+                    titleStyle={Typography.registerButtonTitle}
                     onPress={
                     ()=>{navigation.navigate("Registrera")}
                     }

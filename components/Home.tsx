@@ -1,4 +1,4 @@
-import { StatusBar, Text, ImageBackground, TextInput, View } from 'react-native';
+import { Text, ImageBackground, TextInput, View } from 'react-native';
 import { Images, Typography, Input, Base, Icons } from '../styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 

@@ -1,11 +1,14 @@
-import { View, Text, ScrollView } from "react-native";
-import { useEffect } from 'react';
-import { Base, Typography, Button } from '../../styles';
-import AppButton from '../AppButton';
+import { View, Text, ScrollView, TextInput } from "react-native";
+import { useEffect, useState } from 'react';
+import { Base, Typography, Icons, Input } from '../../styles';
+import StationButton from '../StationButton';
 import { showMessage } from "react-native-flash-message";
 import userModel from "../../models/user"
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 export default function StationsList({ allStations, favoriteStations, setfavoriteStations }) {    
+    const [stationWord, setStationWord] = useState("");
 
     async function reloadFavs() {
         setfavoriteStations(await userModel.getUserData());
@@ -27,6 +30,13 @@ export default function StationsList({ allStations, favoriteStations, setfavorit
         return 0;
     }
 
+    function filterOnSearch(item) {
+       const stationName = item.AdvertisedLocationName.toUpperCase();
+       const searchWord = stationWord.toUpperCase();
+
+       return stationName.startsWith(searchWord);
+    }
+
     function checkFavorites(stationName) {
         for (const item in favoriteStations) {
             const userData = favoriteStations[item];
@@ -41,10 +51,11 @@ export default function StationsList({ allStations, favoriteStations, setfavorit
     }
 
     const listOfStations = allStations
+        .filter(filterOnSearch)
         .sort(sortOnStationName)
         .map((station, index) => {
-            return <View style={Button.screenContainer} key={index}>
-                <AppButton
+            return <View key={index}>
+                <StationButton
                     title={station.AdvertisedLocationName}
                     key={index}
                     onPress={ async () => {
@@ -70,8 +81,27 @@ export default function StationsList({ allStations, favoriteStations, setfavorit
 
     return (
         <ScrollView  style={Base.baseBgColor}>
-            <Text style={Typography.normal}>Tryck på namnet för att lägga till favoriter</Text>
-            {listOfStations}
+            <View style={Base.homeSection}>
+            <Icon name="search" size={20} style={Icons.homeSearchIcon}/>
+            <TextInput
+                style={Input.homeInput}
+                placeholder="Sök tågstation"
+                placeholderTextColor="#000"
+                onChangeText={
+                (searchWord) => { setStationWord(searchWord) }
+                }
+            />
+            </View>
+            
+            {stationWord
+                ? <Text style={Typography.normalBold}>Tryck på namnet för att lägga till favoriter</Text>
+                : <Text style={Typography.normalBold}>Sök för att lägga till stationer till favoriter</Text>
+            }
+            {stationWord
+                ? listOfStations
+                : <Text style={Typography.header4}></Text>
+            }
+            {/* {listOfStations} */}
         </ScrollView>
     );
 }

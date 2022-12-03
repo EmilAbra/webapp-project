@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { View, Text, ScrollView } from "react-native";
 import { Base, Typography, Button } from '../../styles';
 
-import AppButton from '../AppButton';
+import StationButton from '../StationButton';
 import RemoveFavButton from './RemoveFavButton';
 import userModel from '../../models/user.ts';
 
@@ -39,9 +39,9 @@ export default function FavStationsList({ allStations, favoriteStations, navigat
             const longitude = parseFloat(artefact.longitude);
             const latitude = parseFloat(artefact.latitude);
             
-            return <View style={Button.screenContainer} key={index}>
+            return <View style={Button.stationButtonContainer} key={index}>
                     <View style={{ flex: 2}}>
-                        <AppButton
+                        <StationButton
                             title={artefact.place}
                             key={index}
                             onPress={() => {

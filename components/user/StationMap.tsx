@@ -77,9 +77,8 @@ export default function StationMap({ route }) {
     }, []);
 
     return (
-    <View style={Map.container}>
-        <Text style={Typography.normal}>Tåget är försenat med {delayedInMin} min. Den svarta cirkeln runt stationen {stationName} indikerar hur lång sträcka
-            du kan gå tills tåget anländer med en minut tillgodo(beräknat 100m/min).</Text>
+    <View style={Map.halfMapContainer}>
+        <Text style={Typography.normal}>Tåget är försenat med {delayedInMin} min. Den svarta cirkeln runt stationen {stationName} indikerar hur lång sträcka du kan gå tills tåget anländer med en minut tillgodo(beräknat på 100m/min).</Text>
         <MapView
             style={Map.mapHalfHeight}
             region={position}

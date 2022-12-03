@@ -1,24 +1,16 @@
-export const screenContainer = {
-    flex: 1,
-    flexDirection: "row",
-    marginVertical: 10,
-};
 
-export const appButtonContainer = {
+export const stationButtonContainer = {
     backgroundColor: "#fff",
-    padding: 12
-};
-
-export const appButtonText = {
-    padding: 10,
-    fontSize: 17,
-    color: "#000",
+    padding: 20,
+    flex: 1,
+    flexDirection: 'row'
 };
 
 export const detailsButtonContainer = {
     flex: 1,
     marginLeft: 12,
     marginRight: 12,
+    marginBottom: 10
 };
 
 export const detailsButton = {
@@ -50,7 +42,7 @@ export const removeFavButtonText = {
 };
 
 export const loginButton = {
-    backgroundColor: '#4CAF50',
+    backgroundColor: 'rgb(0, 171, 59)',
     height: 'auto',
     maxWidth: '100%',
     marginLeft: 15,
@@ -58,12 +50,6 @@ export const loginButton = {
     marginBottom: 20, 
     padding: 7,
     borderRadius: 5,
-};
-
-export const loginButtonTitle = {
-    fontSize: 25, 
-    color: '#FFF', 
-    textAlign: 'center',
 };
 
 export const signOutButtonContainer = {
@@ -83,12 +69,6 @@ export const registerButton = {
     marginLeft: 15,
     marginRight: 15,
     padding: 7,
-    marginBottom: 20,
+    marginBottom: 15,
     borderRadius: 5,
-};
-
-export const registerButtonTitle = {
-    fontSize: 25, 
-    color: '#212427', 
-    textAlign: 'center',
 };

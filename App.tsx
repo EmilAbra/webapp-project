@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Base } from './styles';
 import FlashMessage from "react-native-flash-message";
-import { StyleSheet, Text, ImageBackground, TextInput, View } from 'react-native';
-
+import { View, Text} from 'react-native';
+import * as Font from 'expo-font';
 
 import HomeStack from "./components/HomeStack.tsx";
 import AuthStack from "./components/auth/AuthStack.tsx";
@@ -20,6 +19,13 @@ import SignOut from "./components/auth/SignOut.tsx";
 import authModel from './models/auth.ts';
 import userModel from './models/user.ts';
 import stationsModel from './models/stationsModel';
+
+const fetchFonts = () =>
+  Font.loadAsync({
+    'sjsans_regular': require('./assets/fonts/sjsans_regular-webfont.woff2.ttf'),
+    'sjsans_bold': require('./assets/fonts/sjsans_bold-webfont.woff2.ttf'),
+});
+
 
 const routeIcons = {
     "Sök": "home",
@@ -40,9 +46,16 @@ export default function App() {
     const [allStations, setAllStations] = useState([]);
     const [currentDelays, setCurrentDelays] = useState([]);
     const [favoriteStations, setfavoriteStations] = useState([]);
-    
-    
+    const [fontLoaded, setFontLoaded] = useState(false);
 
+    useEffect(() => {
+        async function getFonts() {
+          await fetchFonts();
+          setFontLoaded(true);
+        }
+        getFonts();
+    }, []);
+    
     useEffect(() => {
         (async () => {
             setIsLoggedIn(await authModel.loggedIn());
@@ -64,6 +77,14 @@ export default function App() {
         })();
     }, []);
 
+    if (!fontLoaded) {
+        return (
+          <View>
+            <Text>Loading...</Text>
+          </View>
+        );
+    }
+
     return (
         <View style={Base.flex}>
             <NavigationContainer>
@@ -75,8 +96,14 @@ export default function App() {
                         }
                         return <Ionicons name={iconName} size={size} color={color} />;
                     },
+                    tabBarStyle: { 
+                        paddingTop: 5,
+                        paddingBottom: 10,
+                        height: 58
+                    },
+                    tabBarLabelStyle: { fontFamily: 'sjsans_regular' },
                     tabBarActiveTintColor: '#000',
-                    tabBarInactiveTintColor: 'gray',
+                    tabBarInactiveTintColor: '#808080',
                 })}
                 >
                     <Tab.Screen name="Sök" options={{ headerShown: false }}>
@@ -107,7 +134,7 @@ export default function App() {
                     }
                 </Tab.Navigator>
             </NavigationContainer>
-            <StatusBar style="auto" translucent={true} backgroundColor='transparent'/>
+            <StatusBar style="auto" translucent={true} backgroundColor="transparent"/>
             <FlashMessage position="top" />
         </View>
     );

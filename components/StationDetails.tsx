@@ -1,6 +1,6 @@
 import { View, Text, ScrollView } from "react-native";
 import { Base, Typography, Button } from '../styles';
-import DetailsButton from './DetailsButton';
+import StationDetailsButton from './StationDetailsButton';
 
 
 export default function StationDetails({ route, navigation }) {
@@ -55,8 +55,8 @@ export default function StationDetails({ route, navigation }) {
             const delayedInMin = calculateTimeDifference(train.AdvertisedTimeAtLocation, train.EstimatedTimeAtLocation);
             const stationCoords = getStationCoords(station.Geometry.WGS84)
             
-            return <View style={Button.screenContainer} key={index}>
-                    <DetailsButton
+            return <View style={Button.detailsButtonContainer} key={index}>
+                    <StationDetailsButton
                         title={station.AdvertisedLocationName + " - " + getStationName(train.ToLocation[0].LocationName)}
                         key={index}
                         arrival={beforeArrival}
@@ -75,7 +75,7 @@ export default function StationDetails({ route, navigation }) {
 
     return (
         <ScrollView  style={Base.baseBgColor}>
-            <Text style={Typography.header4}>Förseningar för {station.AdvertisedLocationName} station</Text>
+            <Text style={Typography.normalBold}>Förseningar för {station.AdvertisedLocationName} station</Text>
             {ListOfDelayedTrains}
         </ScrollView>
     )
