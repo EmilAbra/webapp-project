@@ -1,11 +1,11 @@
 import Auth from '../../interfaces/auth';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useState } from 'react';
-import { View, TextInput } from 'react-native';
+import { useState, useEffect } from 'react';
+import { TextInput } from 'react-native-paper';
+import { View } from 'react-native';
 import { showMessage } from "react-native-flash-message";
-import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { Input, Base, Button, Icons } from '../../styles';
+import { Input, Base, Button, Typography } from '../../styles';
 import AuthButton from './AuthButton';
 import AuthModel from '../../models/auth.ts';
 
@@ -34,6 +34,17 @@ export default function Login({navigation, setIsLoggedIn}) {
         }
     }
 
+    useEffect(() => {
+        navigation.getParent()?.setOptions({
+          tabBarStyle: {
+            display: "none"
+          }
+        });
+        return () => navigation.getParent()?.setOptions({
+          tabBarStyle: undefined
+        });
+      }, [navigation]);
+
     return (
         <SafeAreaView style={Base.baseContainer}>
             <View style={Input.inputContainerLogin}>
@@ -43,35 +54,38 @@ export default function Login({navigation, setIsLoggedIn}) {
                         keyboardType="email-address"
                         autoCapitalize="none"
                         autoCorrect={false}
-                        placeholder="E-post"
+                        activeOutlineColor= '#000'
+                        mode='outlined'
+                        label="E-post"
                         onChangeText={(content: string) => {
                             setAuth({ ...auth, email: content })
                         }}
                         />
                 </View>
-                <View  style={Input.passwordSection}>
+                <View>
                     <TextInput
                         style={Input.passwordInput}
-                        placeholder="Lösenord"
+                        label="Lösenord"
+                        mode='outlined'
+                        activeOutlineColor='#000'
                         autoCapitalize="none"
                         autoCorrect={false}
                         onChangeText={(content: string) => {
                             setAuth({ ...auth, password: content })
                         }}
-                        secureTextEntry={hidePass ? true : false}>
+                        secureTextEntry={hidePass ? true : false}
+                        right={<TextInput.Icon icon={hidePass ? 'eye-off' : 'eye'} 
+                            onPress={() => setHidePass(!hidePass)}
+                            color='#808080'
+                        />}
+                        >
                     </TextInput>
-                    <Icon
-                        size={30}
-                        style={Icons.passwordIcon}
-                        name={hidePass ? 'eye-slash' : 'eye'}
-                        onPress={() => setHidePass(!hidePass)} 
-                    />
                 </View>
             </View>
             <View style={Button.logInButtonContainer}>
                 <AuthButton
                     title={"Logga in"}
-                    titleStyle={Button.loginButtonTitle}
+                    titleStyle={Typography.loginButtonTitle}
                     style={Button.loginButton}
                     onPress={doLogin}
                 />
