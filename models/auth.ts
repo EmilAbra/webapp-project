@@ -1,5 +1,6 @@
 import config from "../config/config.json";
 import storage from "./storage";
+import Auth from '../interfaces/auth';
 
 const auth = {
     loggedIn: async function loggedIn() {
@@ -12,7 +13,7 @@ const auth = {
 
         return token && notExpired;
     },
-    login: async function login(email: string, password: string) {
+    login: async function login(email: Auth, password: Auth) {
         const data = {
             api_key: config.api_key,
             email: email,
@@ -43,7 +44,7 @@ const auth = {
             type: "success",
         };
     },
-    register: async function register(email: string, password: string) {
+    register: async function register(email: Auth, password: Auth) {
         const data = {
             api_key: config.api_key,
             email: email,

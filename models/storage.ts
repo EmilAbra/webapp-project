@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Auth from '../../interfaces/auth';
+import Auth from '../interfaces/auth';
 
 const storage = {
-    storeToken: async function storeToken(token: string) {
+    storeToken: async function storeToken(token: Auth) {
         try {
             const tokenAndDate = {
                 token: token,
