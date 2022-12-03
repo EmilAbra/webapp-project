@@ -101,7 +101,6 @@ export default function StationsList({ allStations, favoriteStations, setfavorit
                 ? listOfStations
                 : <Text style={Typography.header4}></Text>
             }
-            {/* {listOfStations} */}
         </ScrollView>
     );
 }
