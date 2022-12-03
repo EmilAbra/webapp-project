@@ -12,7 +12,9 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "setupFiles": ["./mock/jestSetupFile.js"]
+    "setupFiles": [
+      "./mock/jestSetupFile.js"
+    ]
   },
   "dependencies": {
     "@expo/ngrok": "^4.1.0",
