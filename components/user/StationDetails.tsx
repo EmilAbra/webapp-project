@@ -4,7 +4,12 @@ import StationDetailsButton from '../StationDetailsButton';
 
 
 export default function StationDetails({ route, navigation }) {
-    const { allStations, stationName, currentDelays, longitude, latitude } = route.params;
+    const { 
+        allStations, 
+        stationName, 
+        currentDelays, 
+        longitude, 
+        latitude } = route.params;
 
     function filterOnStationName(item) {
         for (const object in item.FromLocation) {

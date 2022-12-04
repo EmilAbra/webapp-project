@@ -7,12 +7,12 @@ export default function StationsList({ navigation, allStations, currentDelays })
 
     useEffect(() => {
         navigation.getParent()?.setOptions({
-          tabBarStyle: {
-            display: "none"
-          }
+            tabBarStyle: {
+                display: "none"
+            }
         });
         return () => navigation.getParent()?.setOptions({
-          tabBarStyle: undefined
+            tabBarStyle: undefined
         });
     }, [navigation]);
 

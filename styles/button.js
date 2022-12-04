@@ -19,7 +19,14 @@ export const detailsButton = {
     maxWidth: '100%',
     position: 'relative',
     elevation: 5,
-    padding: 5
+    padding: 5,
+    shadowColor: "#000",
+    shadowOffset: {
+        width: 0,
+        height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
 };
 
 export const removeFavContainer = {
@@ -32,9 +39,17 @@ export const removeFavButton = {
     height: 'auto',
     maxWidth: '100%',
     position: 'relative',
-    elevation: 5,
     padding: 12,
     borderRadius: 5,
+    elevation: 5,
+    padding: 5,
+    shadowColor: "#000",
+    shadowOffset: {
+        width: 0,
+        height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
 };
 
 export const removeFavButtonText = {

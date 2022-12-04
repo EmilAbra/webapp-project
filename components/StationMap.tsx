@@ -8,7 +8,10 @@ import * as Location from 'expo-location';
 
 
 export default function StationMap({ route }) {
-    const { delayedInMin, stationCoords, stationName } = route.params;
+    const { 
+        delayedInMin, 
+        stationCoords, 
+        stationName } = route.params;
 
     const [locationMarker, setLocationMarker] = useState<any>(null);
     const [stationMarker, setStationMarker] = useState<any>(null);

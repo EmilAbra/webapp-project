@@ -21,9 +21,9 @@ import userModel from './models/user.ts';
 import stationsModel from './models/stationsModel';
 
 const fetchFonts = () =>
-  Font.loadAsync({
-    'sjsans_regular': require('./assets/fonts/sjsans_regular-webfont.woff2.ttf'),
-    'sjsans_bold': require('./assets/fonts/sjsans_bold-webfont.woff2.ttf'),
+    Font.loadAsync({
+        'sjsans_regular': require('./assets/fonts/sjsans_regular-webfont.woff2.ttf'),
+        'sjsans_bold': require('./assets/fonts/sjsans_bold-webfont.woff2.ttf'),
 });
 
 
@@ -107,7 +107,12 @@ export default function App() {
                 })}
                 >
                     <Tab.Screen name="Sök" options={{ headerShown: false }}>
-                        {() => <HomeStack allStations={allStations} currentDelays={currentDelays} />}
+                        {() => 
+                            <HomeStack 
+                                allStations={allStations} 
+                                currentDelays={currentDelays} 
+                            />
+                        }
                     </Tab.Screen>
                     <Tab.Screen name="Karta">
                         {() => <Map />}
@@ -118,18 +123,39 @@ export default function App() {
                     {isLoggedIn ?
                         <>  
                             <Tab.Screen name="Stationer">
-                                {() => <Stations allStations={allStations} favoriteStations={favoriteStations} setfavoriteStations={setfavoriteStations} />}
+                                {() => 
+                                    <Stations 
+                                        allStations={allStations} 
+                                        favoriteStations={favoriteStations} 
+                                        setfavoriteStations={setfavoriteStations} 
+                                    />
+                                }
                             </Tab.Screen>
                             <Tab.Screen name="Favoriter" options={{ headerShown: false }}>
-                                {() => <FavoritesStack allStations={allStations} setfavoriteStations={setfavoriteStations} favoriteStations={favoriteStations} currentDelays={currentDelays} />}
+                                {() => 
+                                    <FavoritesStack 
+                                        allStations={allStations} 
+                                        setfavoriteStations={setfavoriteStations} 
+                                        favoriteStations={favoriteStations} 
+                                        currentDelays={currentDelays} 
+                                    />
+                                }
                             </Tab.Screen>
                             <Tab.Screen name="Logga ut">
-                            {() => <SignOut setIsLoggedIn={setIsLoggedIn} />}
+                            {() => 
+                                <SignOut 
+                                    setIsLoggedIn={setIsLoggedIn} 
+                                />
+                            }
                             </Tab.Screen>
                         </>    
                         :
                         <Tab.Screen name="Min sida" options={{ headerShown: false }}>
-                            {() => <AuthStack setIsLoggedIn={setIsLoggedIn} />}
+                            {() => 
+                                <AuthStack 
+                                    setIsLoggedIn={setIsLoggedIn} 
+                                />
+                            }
                         </Tab.Screen>
                     }
                 </Tab.Navigator>

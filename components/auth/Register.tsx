@@ -36,12 +36,12 @@ export default function Register({navigation}) {
     
     useEffect(() => {
         navigation.getParent()?.setOptions({
-          tabBarStyle: {
-            display: "none"
-          }
+            tabBarStyle: {
+                display: "none"
+            }
         });
         return () => navigation.getParent()?.setOptions({
-          tabBarStyle: undefined
+            tabBarStyle: undefined
         });
       }, [navigation]);
 

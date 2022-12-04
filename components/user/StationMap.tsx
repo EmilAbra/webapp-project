@@ -6,7 +6,11 @@ import MapView from 'react-native-maps';
 import * as Location from 'expo-location';
 
 export default function StationMap({ route }) {
-    const { delayedInMin, stationName, longitude, latitude } = route.params;    
+    const { 
+        delayedInMin, 
+        stationName, 
+        longitude, 
+        latitude } = route.params;    
 
     const [locationMarker, setLocationMarker] = useState<any>(null);
     const [stationMarker, setStationMarker] = useState<any>(null);
@@ -78,7 +82,8 @@ export default function StationMap({ route }) {
 
     return (
     <View style={Map.halfMapContainer}>
-        <Text style={Typography.normal}>Tåget är försenat med {delayedInMin} min. Den svarta cirkeln runt stationen {stationName} indikerar hur lång sträcka du kan gå tills tåget anländer med en minut tillgodo(beräknat på 100m/min).</Text>
+        <Text style={Typography.normal}>Tåget är försenat med {delayedInMin} min. Den svarta cirkeln runt stationen {stationName} indikerar hur lång sträcka du kan gå tills tåget anländer med en minut tillgodo(beräknat på 100m/min).
+        </Text>
         <MapView
             style={Map.mapHalfHeight}
             region={position}

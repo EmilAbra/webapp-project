@@ -4,13 +4,11 @@ import storage from "./storage";
 
 const user = {
     getToken: async function getToken() {
-        // console.log(await storage.readToken());
         
         return await storage.readToken();
     },
     getUserData: async function getUserData() {
         const tokenObject: any = await storage.readToken();
-        // console.log(tokenObject.token);
         
         const response = await fetch(`${config.auth_url}/data?api_key=${config.api_key}`, {
             headers: {

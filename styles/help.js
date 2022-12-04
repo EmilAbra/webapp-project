@@ -1,6 +1,3 @@
-// export const flex = {
-//     flex: 1,
-// };
 
 export const textContainer = {
     backgroundColor: '#fff',
@@ -12,6 +9,4 @@ export const textContainer = {
     elevation: 5,
     padding: 20,
     paddingBottom: 0
-    // alignItems: 'center',
-    // justifyContent: 'center',
 };

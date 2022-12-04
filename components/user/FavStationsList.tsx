@@ -6,7 +6,12 @@ import StationButton from '../StationButton';
 import RemoveFavButton from './RemoveFavButton';
 import userModel from '../../models/user.ts';
 
-export default function FavStationsList({ allStations, favoriteStations, navigation, currentDelays, setfavoriteStations}) {   
+export default function FavStationsList({ 
+    allStations, 
+    favoriteStations, 
+    navigation, 
+    currentDelays, 
+    setfavoriteStations}) {   
 
     async function reloadFavs() {
         setfavoriteStations(await userModel.getUserData());
