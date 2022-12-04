@@ -7,7 +7,7 @@ import { Marker, Circle } from "react-native-maps";
 import * as Location from 'expo-location';
 
 
-export default function StationMap({ route }) {
+export default function StationMap({ route, navigation }) {
     const { 
         delayedInMin, 
         stationCoords, 
@@ -23,6 +23,17 @@ export default function StationMap({ route }) {
         latitudeDelta: 0.03507416562703,
         longitudeDelta: 0.03507416562703,
     });
+
+    useEffect(() => {
+        navigation.getParent()?.setOptions({
+            tabBarStyle: {
+                display: "flex"
+            }
+        });
+        return () => navigation.getParent()?.setOptions({
+            tabBarStyle: 'flex'
+        });
+    }, [navigation]);
     
     useEffect(() => {
         (async () => {
