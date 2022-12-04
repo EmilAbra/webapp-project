@@ -104,5 +104,5 @@ export const expectedArrival = {
 
 export const delayedInMin = {
     fontFamily: 'sjsans_regular',
-    paddingLeft: 55
+    paddingLeft: 53
 };
