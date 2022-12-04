@@ -96,11 +96,6 @@ export default function App() {
                         }
                         return <Ionicons name={iconName} size={size} color={color} />;
                     },
-                    tabBarStyle: { 
-                        paddingTop: 5,
-                        paddingBottom: 10,
-                        height: 58
-                    },
                     tabBarLabelStyle: { fontFamily: 'sjsans_regular' },
                     tabBarActiveTintColor: '#000',
                     tabBarInactiveTintColor: '#808080',
