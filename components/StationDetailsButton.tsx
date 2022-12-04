@@ -17,9 +17,30 @@ export default function StationDetailsButton({
             >
                 <View>
                     <Text style={Typography.normalBold}>{title}</Text>
-                    <Text style={Typography.stationDetailsText}>Planerad ankomst: {'\t'}{arrival}</Text>
-                    <Text style={Typography.stationDetailsText}>Ny ankomst: {'\t\t'}{expectedArrival}</Text>
-                    <Text style={Typography.stationDetailsText}>Försening: {'\t\t\t'}{delayedInMin} min</Text>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={Typography.stationDetailsText}>
+                            Planerad ankomst: 
+                        </Text>
+                        <Text>
+                            {arrival}
+                        </Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={Typography.stationDetailsText}>
+                            Ny ankomst: 
+                        </Text>
+                        <Text style={Typography.expectedArrival}>
+                            {expectedArrival}
+                        </Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={Typography.stationDetailsText}>
+                            Försening: 
+                        </Text>
+                        <Text style={Typography.delayedInMin}>
+                            {delayedInMin} min
+                        </Text>
+                    </View>
                 </View>
             </TouchableOpacity>
         </View>

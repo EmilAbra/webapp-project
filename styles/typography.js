@@ -96,3 +96,13 @@ export const registerButtonTitle = {
     textAlign: 'center',
     padding: 4
 };
+
+export const expectedArrival = {
+    fontFamily: 'sjsans_regular',
+    paddingLeft: 42
+};
+
+export const delayedInMin = {
+    fontFamily: 'sjsans_regular',
+    paddingLeft: 55
+};
